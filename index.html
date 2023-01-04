@@ -1,0 +1,546 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.css">
+    <link rel="stylesheet" href="../node_modules/bootstrap-icons/font/bootstrap-icons.css">
+   <style>
+     * {
+            padding: 0;
+            margin: 0;
+            text-decoration: none;
+            list-style: none;
+        }
+
+        body {
+            font-family: montserrat;
+        }
+
+        nav {
+            height: 100px;
+            width: 100%;
+            background: #34495e;
+            border-bottom: 5px solid white;
+        }
+        .logo{
+            line-height: 80px;
+            color: white;
+            font-size: 45px;
+            font-weight: bold;
+            padding: 0 100px;
+
+        }
+       
+        nav ul{
+            float: right;
+            margin-right: 40px;
+        }
+        nav  ul li {
+            display: inline-block;
+            margin: 0 8px;
+            line-height: 80px;
+        }
+
+        nav a {
+            color: white;
+            font-size: 18px;
+            text-transform: uppercase;
+            border: 1px solid transparent;
+            padding: 7px 10px;
+            border-radius: 3px;
+            text-decoration: none;
+        }
+        a.active,
+        a:hover {
+            border: 1px solid white;
+            transition: .5s;
+            padding: 5px;
+        }
+
+
+        .section1{
+            background: gray;
+            display: grid;
+            grid-template-columns: 6fr 6fr;
+            width: 100%;
+            height: 450px;
+        }
+       .section1 .name{
+        text-align: center;
+        color: white;
+        font-size: 55px;
+        padding-top: 105px;
+        
+
+       }
+       .section1 .pic img{
+         width: 240px;
+         height: 350px;
+         border: 5px solid white;
+        
+       }
+       .section1 .pic{
+        padding-top: 55px;
+        padding-left: 155px;
+       }
+       .section2{
+        background: gray;
+       }
+      .section3{
+        background: gray;
+      }
+       .section3 .qua-contents{
+            display: grid;
+            grid-template-columns: 6fr 6fr;
+            background: gray;
+        }
+        .section3 .qua-contents .qua-logo img{
+            position: relative;
+            top: 125px;
+            left: 170px;
+        }
+        .section4{
+            background: gray;
+        }
+        .section5{
+            background: gray;
+        }
+        footer{
+            background-color: black;
+            color: white;
+        }
+
+        #check, #checkbtn, #cancel{
+            color: #34495e;
+            
+        }
+        #check{
+            display: none;
+        }
+
+
+
+    @media (max-width:909px){
+        nav{
+            width: 100%;
+            height: 70px;
+            background: #2f3640;
+        }
+        .logo{
+            font-size: 35px;
+            line-height: 80px;
+            padding: 0 50px;
+        }
+        label{
+            color: white;
+            font-size: 35px;
+        }
+        #check{
+            display: none;
+        }
+        #checkbtn{
+            float: right;
+            line-height: 80px;
+            color: white;
+        }
+        #cancel{
+            display: none;
+            color: white;
+        }
+        nav ul{
+            position: fixed;
+    width: 100%;
+    height: 100vh;
+    background: #34495e;
+    top:80px;
+    left: -100%;
+    text-align: center;
+    transition: all .5s;
+
+        }
+        nav ul li{
+    display: block;
+    margin: 50px 0;
+    line-height: 30px;
+}
+nav ul li a{
+    font-size: 20px;
+}
+a:hover {
+                border:2px solid white;
+            }
+
+#check:checked ~ ul{
+    left: 0%;
+}
+#check:checked ~ label #btn{
+    display: none;
+}
+#check:checked ~ label #cancel{
+    display:block;
+} 
+
+
+        .section1{
+            color:white;
+            background: gray;
+            display: block;
+            height: 400px;
+        } 
+
+        .section1 .name{
+            text-align: center;
+            font-weight: bold;
+            font-size: 25px; 
+            padding-top: 125px;
+           font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            
+
+        }
+        .section1 .pic{
+            padding-left: 70px;
+            padding-top: 40px;
+        }
+        .section1 .pic img{
+            width: 225px;
+            height: 288px;
+            border: 5px solid white;
+            
+        }
+        .section2{
+                position:relative;
+                top:250px;
+                background: gray;
+            }
+            .section3{
+                position: relative;
+                top: 200px;
+                background: gray;
+            }
+            .section3 .qua-contents{
+                display: block;
+            }
+            .section3  .qua-contents .qua-logo img {
+                width: 174px;
+                height: 144px;
+               
+                position: relative;
+                top: 10px;
+                left: 80px;
+                padding-bottom: 10px;
+            }
+            .section3 .qua-contents .qua-1{
+                padding-top: 15px;
+            }
+            .section4{
+                position: relative;
+                top: 175px;
+                background: gray;
+            }
+            .section4 .container{
+                padding-top: 25px;
+            }
+            .section5{
+                position: relative;
+                top: 173px;
+                background: gray;
+            }
+           .section5 .container{
+            padding-top: 20px;
+           }
+           footer{
+            background: black;
+            color: white;
+            display: block;
+           }
+        
+            
+
+
+    }
+
+    
+   </style>
+</head>
+<body>
+    <!-- Header Section-->
+    <nav>
+        <label class="logo"> Port<span class="text-primary">Folio</span></label>
+        <input type="checkbox" id="check">
+        <label for="check" id="checkbtn">
+            <i class="bi bi-list" id="btn"></i>
+            <i class="bi bi-backspace" id="cancel"></i>
+        </label>
+        <ul>
+            <li><a href="#section1" class="nav-item nav-link active"><b>Home</b></a></li>
+            <li><a href="#section2" class="nav-item nav-link"><b>About</b></a></li>
+            <li><a href="#section3" class="nav-item nav-link"><b>Qualication</b></a></li>
+
+            <li><a href="#section4" class="nav-item nav-link"><b>Skills</b></a></li>
+            <li><a href="#section5" class="nav-item nav-link"><b>Contact</b></a></li>
+
+        </ul>
+       
+    </nav>
+    <!--Header Section End-->
+
+     <!--Body Section -->
+     <!--Home Start-->
+     <section class="section1" id="section1">
+
+        <div class="name" id="name">Hello I am <br><span class="name1">Sanket Khiratkar</span></div>
+        <div class="pic" id="pic">
+            <img src="../SRC/images/Pic 1_1655056048489.jpg" alt="">
+        </div>
+
+    </section>
+    <!--Home End-->
+    <!--About Start-->
+    <section class="section2" id="section2">
+        <div class="container-fluid py-5" id="about">
+            <div class="container">
+                <div class="position-relative d-flex align-items-center justify-content-center">
+                    <h1 class="display-1 text-uppercase text-white" style="-webkit-text-stroke: 1px #dee2e6;">About</h1>
+                    <h1 class="position-absolute text-uppercase text-primary">About Me</h1>
+                </div>
+                <div class="row align-items-center">
+                    <div class="col-lg-5 pb-4 pb-lg-0">
+                        <img class="img-fluid rounded w-100" src="../SRC/images/Picsart_23-01-03_16-27-23-529.png"
+                            alt="">
+                    </div>
+                    <div class="col-lg-7">
+                        <h3 class="mb-4"></h3>
+                        <p> <b>I believe my fast learning abilities, commitment to succeed, and relevant studies make me
+                            the perfect fit .</b></p>
+                        <div class="row mb-3">
+                            <div class="col-sm-6 py-2">
+                                <h5>Name: <span class="text-light">Sanket Khiratkar</span>
+                                </h5>
+                            </div>
+                            <div class="col-sm-6 py-2">
+                                <h5>Birthday: <span class="text-light">16 July 2000</span></h5>
+                            </div>
+                            <div class="col-sm-6 py-2">
+                                <h5>Degree: <span class="text-light">Master</span></h5>
+                            </div>
+                            <div class="col-sm-6 py-2">
+                                <h5>Experience: <span class="text-light">0 Years</span></h5>
+                            </div>
+                            <div class="col-sm-6 py-2">
+                                <h5>Phone: <span class="text-light">+91 9604886907</span></h5>
+                            </div>
+                            <div class="col-sm-6 py-2">
+                                <h5>Email: <span class="text-light">sanketkhiratkar40@gmail.com</span></h5>
+                            </div>
+                            <div class="col-sm-6 py-2">
+                                <h5>Address: <span class="text-light">WCL Colony, Qtr No. 57/3, Tilak Ward,
+                                        Ballarpur, Dist Chandrapur, Maharashtra</span></h5>
+                            </div>
+                            <div class="col-sm-6 py-2">
+                                <h5>Freelance: <span class="text-light">Available</span></h5>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+                
+    </section>
+    <!--About End-->
+    <!--Qualication Start-->
+    <section class="section3" id="section3">
+        <div class="position-relative d-flex align-items-center justify-content-center">
+            <h1 class="display-1 text-uppercase text-white" style="-webkit-text-stroke: 1px #dee2e6;">Qualification</h1>
+            <h1 class="position-absolute text-uppercase text-primary">Qualification</h1>
+        </div>
+        <div class="qua-contents">
+            <div class="qua-logo">
+                <img src="../SRC/images/Picsart_23-01-03_18-17-07-869.png" alt="">
+            </div>
+            <div class="qua-1">
+                <div class="col-lg-6">
+                    <h3 class="mb-4">My Education</h3>
+                    <div class="border-left border-primary pt-2 pl-4 ml-2">
+                        <div class="position-relative ex-me mb-4">
+                            <i class="far fa-dot-circle text-primary position-absolute" style="top: 2px; left: -35px; font-size: 22px;"></i>
+                            <h5 class="font-weight-bold mb-1">Master Of Computer Application</h5>
+                            <p class="mb-2"><strong>Gondwana University</strong>  </p>
+                            <p>Current Pursuing my Master degree from Ballarpur Institute of Technology</p>
+                        </div>
+
+                        <div class="position-relative ex-me mb-4">
+                            <i class="far fa-dot-circle text-primary position-absolute" style="top: 2px; left: -35px; font-size: 22px;"></i>
+                            <h5 class="font-weight-bold mb-1">Bachelor Of Computer Application</h5>
+                            <p class="mb-2"><strong>Gondwana University</strong> | <small>2018 - 2021</small></p>
+                            <p>I have completed my Bachelor degree from Sardar Patel College with 7.44 CGPA</p>
+                        </div>
+                        <div class="position-relative ex-me mb-4">
+                            <i class="far fa-dot-circle text-primary position-absolute" style="top: 2px; left: -35px;  font-size: 22px;"></i>
+                            <h5 class="font-weight-bold mb-1">HSC</h5>
+                            <p class="mb-2"><strong>Maharashtra State Board</strong> | <small>2016 - 2018</small></p>
+                            <p> I had completed my Intermiated from Guru Nanak College, Ballarpur with 60.48%</p>
+                        </div>
+                        <div class="position-relative ex-me mb-4">
+                            <i class="far fa-dot-circle text-primary position-absolute" style="top: 2px; left: -35px;  font-size: 22px;"></i>
+                            <h5 class="font-weight-bold mb-1">SSC</h5>
+                            <p class="mb-2"><strong>Maharashtra State Board</strong> | <small>2007 - 2016</small></p>
+                            <p>I did complete my Schooling from Dilasagram Convent High School, Ballarpur with 80.40%</p>
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+    </section>
+    <!--Qualication End-->
+    <!-- Skill Start -->
+    <section class="section4" id="section4">
+        <div class="container">
+            <div class="position-relative d-flex align-items-center justify-content-center">
+                <h1 class="display-1 text-uppercase text-white" style="-webkit-text-stroke: 1px #dee2e6;">Skills</h1>
+                <h1 class="position-absolute text-uppercase text-primary">My Skills</h1>
+            </div>
+            <div class="row align-items-center">
+                <div class="col-md-6">
+                    <div class="skill mb-4">
+                        <div class="d-flex justify-content-between">
+                            <h6 class="font-weight-bold">HTML</h6>
+                            <h6 class="font-weight-bold">90%</h6>
+                        </div>
+                        <div class="progress">
+                            <div class="progress-bar bg-primary" role="progressbar" aria-valuenow="95" aria-valuemin="0" aria-valuemax="100" style="width: 90%;">90%</div>
+                        </div>
+                    </div>
+                    <div class="skill mb-4">
+                        <div class="d-flex justify-content-between">
+                            <h6 class="font-weight-bold">CSS</h6>
+                            <h6 class="font-weight-bold">80%</h6>
+                        </div>
+                        <div class="progress">
+                            <div class="progress-bar bg-warning" role="progressbar" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100"  style="width: 80%;">80%</div>
+                        </div>
+                    </div>
+                    <div class="skill mb-4">
+                        <div class="d-flex justify-content-between">
+                            <h6 class="font-weight-bold">bootstrap</h6>
+                            <h6 class="font-weight-bold">80%</h6>
+                        </div>
+                        <div class="progress">
+                            <div class="progress-bar bg-danger" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100"  style="width: 80%;">80%</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="skill mb-4">
+                        <div class="d-flex justify-content-between">
+                            <h6 class="font-weight-bold">Javascript</h6>
+                            <h6 class="font-weight-bold">50%</h6>
+                        </div>
+                        <div class="progress">
+                            <div class="progress-bar bg-danger" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100" style="width: 50%;">50%</div>
+                        </div>
+                    </div>
+                    <div class="skill mb-4">
+                        <div class="d-flex justify-content-between">
+                            <h6 class="font-weight-bold">Jquery</h6>
+                            <h6 class="font-weight-bold">65%</h6>
+                        </div>
+                        <div class="progress">
+                            <div class="progress-bar bg-dark" role="progressbar" aria-valuenow="95" aria-valuemin="0" aria-valuemax="100" style="width: 65%;">65%</div>
+                        </div>
+                    </div>
+                    <div class="skill mb-4">
+                        <div class="d-flex justify-content-between">
+                            <h6 class="font-weight-bold">MongoDb</h6>
+                            <h6 class="font-weight-bold">55%</h6>
+                        </div>
+                        <div class="progress">
+                            <div class="progress-bar bg-info" role="progressbar" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100" style="width: 55%;">55%</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+   
+    </section>
+     <!-- Skill End -->
+     <!-- Contact Start -->
+    <section class="section5" id="section5">
+        <div class="container">
+            <div class="position-relative d-flex align-items-center justify-content-center">
+                <h1 class="display-1 text-uppercase text-white" style="-webkit-text-stroke: 1px #dee2e6;">Contact</h1>
+                <h1 class="position-absolute text-uppercase text-primary">Contact Me</h1>
+            </div>
+            <div class="row justify-content-center">
+                <div class="col-lg-8">
+                    <div class="contact-form text-center">
+                        <div id="success"></div>
+                        <form name="sentMessage" id="contactForm" novalidate="novalidate">
+                            <div class="form-row">
+                                <div class="control-group col-sm-6">
+                                    <input type="text" class="form-control p-4" id="name" placeholder="Your Name"
+                                        required="required" data-validation-required-message="Please enter your name" />
+                                    <p class="help-block text-danger"></p>
+                                </div>
+                                <div class="control-group col-sm-6">
+                                    <input type="email" class="form-control p-4" id="email" placeholder="Your Email"
+                                        required="required" data-validation-required-message="Please enter your email" />
+                                    <p class="help-block text-danger"></p>
+                                </div>
+                            </div>
+                            <div class="control-group">
+                                <input type="text" class="form-control p-4" id="subject" placeholder="Subject"
+                                    required="required" data-validation-required-message="Please enter a subject" />
+                                <p class="help-block text-danger"></p>
+                            </div>
+                            <div class="control-group">
+                                <textarea class="form-control py-3 px-4" rows="5" id="message" placeholder="Message"
+                                    required="required"
+                                    data-validation-required-message="Please enter your message"></textarea>
+                                <p class="help-block text-danger"></p>
+                            </div>
+                            <div>
+                                <button class="btn btn-outline-primary" type="submit" id="sendMessageButton">Send
+                                    Message</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+  </section>
+   <!-- Contact End -->
+    <!--Body Section End-->
+     <!-- Footer Start -->
+     <footer class="footer" id="footer">
+        <div class="container text-center py-5">
+            <div class="d-flex justify-content-center mb-4">
+                <a class="btn btn-light btn-social mr-2" href="www.twitter.com"><i class="bi bi-twitter"></i></a>
+                <a class="btn btn-light btn-social mr-2" href="www.facebook.com"><i class="bi bi-facebook"></i></a>
+                <a class="btn btn-light btn-social mr-2" href="www.lindedin.in"><i class="bi bi-linkedin"></i></a>
+                <a class="btn btn-light btn-social" href="www.instagram.com"><i class="bi bi-instagram"></i></a>
+            </div>
+            <div class="d-flex justify-content-center mb-3">
+                <a class="text-white" href="#">Privacy</a>
+                <span class="px-3">|</span>
+                <a class="text-white" href="#">Terms</a>
+                <span class="px-3">|</span>
+                <a class="text-white" href="#">FAQs</a>
+                <span class="px-3">|</span>
+                <a class="text-white" href="#">Help</a>
+            </div>
+            <p class="m-0">&copy; <a class="text-white font-weight-bold" href="#footer"></a> Copyright 2022<a class="text-white font-weight-bold" href="#"></a>
+            </p>
+        </div>
+    </footer>
+    <!-- Footer End -->
+
+
+    
+   
+    
+</body>
+</html>
